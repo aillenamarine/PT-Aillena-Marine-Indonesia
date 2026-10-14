@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="100%" height="100%">
+  <defs>
+    <!-- Silver Metallic Gradient for the wave ripple -->
+    <linearGradient id="silverWaveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="30%" stop-color="#E2E8F0"/>
+      <stop offset="50%" stop-color="#94A3B8"/>
+      <stop offset="70%" stop-color="#CBD5E1"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="silverShine" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#94A3B8"/>
+      <stop offset="50%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- MERCURY Italicized Red Typography -->
+  <g transform="skewX(-16) translate(30, 0)">
+    <text x="0" y="56" font-family="'Outfit', 'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="52" fill="#D01A2B" letter-spacing="-0.5">MERCURY</text>
+  </g>
+
+  <!-- Silver 3D Water Wave Under M & E -->
+  <g transform="translate(15, 52)">
+    <!-- Upper chrome wave crest -->
+    <path d="M 0 16 C 18 16, 28 8, 48 8 C 68 8, 78 16, 96 16 C 112 16, 120 10, 134 6 L 130 11 C 116 15, 108 20, 94 20 C 76 20, 66 12, 46 12 C 28 12, 18 19, 0 19 Z" fill="url(#silverWaveGrad)" stroke="#64748B" stroke-width="0.5"/>
+    <!-- Lower chrome wave trough -->
+    <path d="M 0 20 C 18 20, 28 12, 48 12 C 68 12, 78 20, 96 20 C 112 20, 120 14, 134 10 L 130 15 C 116 19, 108 24, 94 24 C 76 24, 66 16, 46 16 C 28 16, 18 23, 0 23 Z" fill="url(#silverShine)" stroke="#475569" stroke-width="0.5"/>
+  </g>
+
+  <!-- Registered trademark ® -->
+  <text x="390" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D01A2B">®</text>
+</svg>

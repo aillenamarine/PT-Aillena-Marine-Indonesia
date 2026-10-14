@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 80" width="100%" height="100%">
+  <!-- Suzuki S Symbol -->
+  <g transform="translate(12, 10)">
+    <!-- Upper half -->
+    <path d="M 16 0 L 66 0 C 70 0 71 3 68 7 L 31 44 L 50 44 C 54 44 56 41 58 39 L 68 29 L 68 37 C 68 41 65 44 61 48 L 41 68 L 41 68 L 33 60 L 52 41 L 33 41 C 29 41 27 44 25 46 L 15 56 L 15 48 C 15 44 18 41 22 37 L 42 17 L 23 17 C 19 17 17 20 15 22 L 5 32 L 5 24 C 5 20 8 17 12 13 Z" fill="none"/>
+    
+    <!-- Clean Canonical Suzuki S Polygon -->
+    <path d="M 18 0 L 68 0 L 22 46 L 46 46 L 68 24 L 68 34 L 38 64 L 6 64 L 6 56 L 24 38 L 4 38 L 4 28 L 18 14 Z" fill="#E30613"/>
+    <path d="M 68 64 L 18 64 L 64 18 L 40 18 L 18 40 L 18 30 L 48 0 L 80 0 L 80 8 L 62 26 L 82 26 L 82 36 L 68 50 Z" fill="#E30613"/>
+  </g>
+
+  <!-- SUZUKI Text -->
+  <text x="110" y="56" font-family="'Outfit', 'Arial Black', Impact, sans-serif" font-weight="900" font-size="47" fill="#005BAC" letter-spacing="1.5">SUZUKI</text>
+</svg>
