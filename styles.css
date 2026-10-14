@@ -66,6 +66,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -76,6 +78,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -4932,6 +4935,128 @@ input:focus, textarea:focus, select:focus {
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-modal { padding: 1rem; }
   .gallery-modal-info { padding: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    gap: 0.85rem;
+  }
+
+  .stat-card {
+    padding: 0.75rem 0.95rem;
+  }
+
+  .section {
+    padding: 3.25rem 0;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .form-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .quick-wa-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .quick-wa-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-subpage-cta-banner {
+    padding: 1.5rem 1rem;
+  }
+
+  .about-subpage-cta-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partner-logos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .partner-card {
+    padding: 1rem 0.5rem;
+  }
+
+  .partner-logo-img {
+    max-height: 38px;
+  }
+
+  .client-badge-item {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .service-card .service-content {
+    padding: 1.35rem 1rem;
+  }
+
+  .subpage-title {
+    font-size: 1.85rem;
+  }
+
+  .subpage-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .map-card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .map-card-header .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .floating-wa {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .back-to-top {
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
 }
 
 /* --- 6. Accessibility & Reduced Motion Support --- */
