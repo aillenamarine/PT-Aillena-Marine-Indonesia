@@ -106,14 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Also update subnav pills on about.html
+        // Also update subnav pills on subpages without affecting window scroll
         const subnavBtns = document.querySelectorAll('.subnav-btn');
+        const subnavPills = document.getElementById('subnavPills');
         if (subnavBtns.length > 0) {
           subnavBtns.forEach((btn) => {
             if (btn.getAttribute('href') === `#${id}`) {
               btn.classList.add('active');
-              // Auto-scroll pill into view on mobile if needed
-              btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+              // Auto-scroll pill horizontally inside subnav container ONLY (never touch window scroll)
+              if (subnavPills) {
+                const pillLeft = btn.offsetLeft;
+                const pillRight = pillLeft + btn.offsetWidth;
+                const containerScrollLeft = subnavPills.scrollLeft;
+                const containerWidth = subnavPills.clientWidth;
+
+                if (pillLeft < containerScrollLeft) {
+                  subnavPills.scrollTo({ left: Math.max(0, pillLeft - 20), behavior: 'smooth' });
+                } else if (pillRight > containerScrollLeft + containerWidth) {
+                  subnavPills.scrollTo({ left: pillRight - containerWidth + 20, behavior: 'smooth' });
+                }
+              }
             } else {
               btn.classList.remove('active');
             }
