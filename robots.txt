@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aillenamarine.github.io/PT-Aillena-Marine-Indonesia/sitemap.xml
