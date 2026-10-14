@@ -18,17 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. Sticky Header Elevation on Scroll
   const handleScroll = () => {
-    if (window.scrollY > 40) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    if (header) {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
 
     // Back to top button visibility
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
+    if (backToTopBtn) {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
     }
   };
 
@@ -37,15 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Mobile Drawer Navigation Toggle
   const openDrawer = () => {
-    mobileDrawer.classList.add('active');
+    if (mobileDrawer) mobileDrawer.classList.add('active');
     document.body.style.overflow = 'hidden';
-    mobileToggle.setAttribute('aria-expanded', 'true');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'true');
   };
 
   const closeDrawer = () => {
-    mobileDrawer.classList.remove('active');
+    if (mobileDrawer) mobileDrawer.classList.remove('active');
     document.body.style.overflow = '';
-    mobileToggle.setAttribute('aria-expanded', 'false');
+    if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
   };
 
   if (mobileToggle) {
