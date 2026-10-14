@@ -123,6 +123,64 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionObserver.observe(section);
   });
 
+  // 4b. Subnav Horizontal Scroll Slider & Arrow Controls (about, services, workflow)
+  const initSubnavSlider = () => {
+    const subnavPills = document.getElementById('subnavPills');
+    const arrowLeft = document.getElementById('subnavArrowLeft');
+    const arrowRight = document.getElementById('subnavArrowRight');
+
+    if (!subnavPills) return;
+
+    const updateArrows = () => {
+      const scrollLeft = subnavPills.scrollLeft;
+      const maxScroll = subnavPills.scrollWidth - subnavPills.clientWidth;
+
+      if (maxScroll <= 4) {
+        if (arrowLeft) arrowLeft.style.display = 'none';
+        if (arrowRight) arrowRight.style.display = 'none';
+        return;
+      }
+
+      if (arrowLeft) {
+        arrowLeft.style.display = 'flex';
+        if (scrollLeft <= 4) {
+          arrowLeft.classList.add('disabled');
+        } else {
+          arrowLeft.classList.remove('disabled');
+        }
+      }
+
+      if (arrowRight) {
+        arrowRight.style.display = 'flex';
+        if (scrollLeft >= maxScroll - 4) {
+          arrowRight.classList.add('disabled');
+        } else {
+          arrowRight.classList.remove('disabled');
+        }
+      }
+    };
+
+    if (arrowLeft) {
+      arrowLeft.addEventListener('click', (e) => {
+        e.preventDefault();
+        subnavPills.scrollBy({ left: -260, behavior: 'smooth' });
+      });
+    }
+
+    if (arrowRight) {
+      arrowRight.addEventListener('click', (e) => {
+        e.preventDefault();
+        subnavPills.scrollBy({ left: 260, behavior: 'smooth' });
+      });
+    }
+
+    subnavPills.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    setTimeout(updateArrows, 150);
+    window.addEventListener('load', updateArrows);
+  };
+  initSubnavSlider();
+
   // 5. Team Personnel Category Filtering (about.html)
   const filterBtns = document.querySelectorAll('.team-filter-btn');
   const personCards = document.querySelectorAll('.person-card');

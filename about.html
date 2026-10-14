@@ -124,6 +124,13 @@
                   <span>Workshop Memey Marine & docking rel</span>
                 </div>
               </a>
+              <a href="#faq" class="nav-dropdown-item">
+                <i class="fa-solid fa-circle-question nav-dropdown-icon"></i>
+                <div class="nav-dropdown-text">
+                  <strong>FAQ Profil Perusahaan</strong>
+                  <span>Pertanyaan umum & legalitas</span>
+                </div>
+              </a>
             </div>
           </li>
 
@@ -391,25 +398,38 @@
     <!-- ==================== STICKY SUB-NAVIGATION BAR ==================== -->
     <div class="sticky-subnav" id="stickySubnav">
       <div class="container">
-        <div class="subnav-pills" id="subnavPills">
-          <a href="#profil" class="subnav-btn active">
-            <i class="fa-solid fa-building-user"></i> Profil Perusahaan
-          </a>
-          <a href="#visi-misi" class="subnav-btn">
-            <i class="fa-solid fa-bullseye"></i> Visi & Misi Lengkap
-          </a>
-          <a href="#tim" class="subnav-btn">
-            <i class="fa-solid fa-users-gear"></i> Struktur Tim & Ahli
-          </a>
-          <a href="#legalitas" class="subnav-btn">
-            <i class="fa-solid fa-file-shield"></i> Legalitas & Perizinan
-          </a>
-          <a href="#sertifikasi" class="subnav-btn">
-            <i class="fa-solid fa-award"></i> Sertifikasi Resmi
-          </a>
-          <a href="#fasilitas" class="subnav-btn">
-            <i class="fa-solid fa-warehouse"></i> Fasilitas Workshop
-          </a>
+        <div class="subnav-container">
+          <button type="button" class="subnav-arrow subnav-arrow-left" id="subnavArrowLeft" aria-label="Geser Menu ke Kiri">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="subnav-wrapper">
+            <div class="subnav-pills" id="subnavPills">
+              <a href="#profil" class="subnav-btn active">
+                <i class="fa-solid fa-building-user"></i> Profil Perusahaan
+              </a>
+              <a href="#visi-misi" class="subnav-btn">
+                <i class="fa-solid fa-bullseye"></i> Visi & Misi Lengkap
+              </a>
+              <a href="#tim" class="subnav-btn">
+                <i class="fa-solid fa-users-gear"></i> Struktur Tim & Ahli
+              </a>
+              <a href="#legalitas" class="subnav-btn">
+                <i class="fa-solid fa-file-shield"></i> Legalitas & Perizinan
+              </a>
+              <a href="#sertifikasi" class="subnav-btn">
+                <i class="fa-solid fa-award"></i> Sertifikasi Resmi
+              </a>
+              <a href="#fasilitas" class="subnav-btn">
+                <i class="fa-solid fa-warehouse"></i> Fasilitas Workshop
+              </a>
+              <a href="#faq" class="subnav-btn">
+                <i class="fa-solid fa-circle-question"></i> FAQ Profil
+              </a>
+            </div>
+          </div>
+          <button type="button" class="subnav-arrow subnav-arrow-right" id="subnavArrowRight" aria-label="Geser Menu ke Kanan">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -1431,6 +1451,40 @@
                 <li><i class="fa-solid fa-check"></i> Mobil operasional service darurat siaga 24 Jam</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7. SUB-PAGE: FAQ PROFIL & LEGALITAS ==================== -->
+    <section class="subpage-section" id="faq">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Bagian 07 — Pertanyaan Umum</span>
+          <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQ Profil)</h2>
+          <div class="title-divider"></div>
+          <p class="section-subtitle">
+            Informasi penting terkait legalitas perusahaan, sertifikasi teknisi resmi, skema kontrak pemeliharaan, serta jangkauan layanan PT Aillena Marine Indonesia.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4><i class="fa-solid fa-circle-question"></i> Apakah PT Aillena Marine Indonesia adalah badan usaha berbadan hukum resmi?</h4>
+            <p>Ya. Kami beroperasi di bawah badan hukum perseroan terbatas resmi PT Aillena Marine Indonesia dengan Nomor Induk Berusaha (NIB), SK Kemenkumham, serta NPWP Badan terdaftar, dan memenuhi syarat administrasi pengadaan barang/jasa instansi pemerintah maupun BUMN.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i class="fa-solid fa-circle-question"></i> Apa sertifikasi dan standar kompetensi yang dimiliki oleh para teknisi?</h4>
+            <p>Teknisi utama kami memegang sertifikasi resmi dari prinsipal ATPM Yamaha Marine (PT Dunia Marine Internusa) untuk mesin 2-Tak dan 4-Tak OBM, didukung pengalaman lebih dari 15 tahun dalam overhaul mekanikal, sistem kelistrikan kelautan, dan diagnostik digital YDIS.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i class="fa-solid fa-circle-question"></i> Apakah PT Aillena Marine Indonesia melayani kontrak perawatan berkala (Maintenance Contract)?</h4>
+            <p>Tentu. Kami menyediakan skema kontrak perawatan berkala (Service Level Agreement) tahunan maupun multi-bulan bagi instansi pemerintah (Polairud, Navigasi, KPLP, Dishub) dan perusahaan swasta dengan prioritas ketersediaan mekanik dan suku cadang.</p>
+          </div>
+          <div class="faq-card">
+            <h4><i class="fa-solid fa-circle-question"></i> Di mana lokasi bengkel fisik dan bagaimana jika unit kapal berada di luar Semarang?</h4>
+            <p>Fasilitas bengkel dan docking rel kami berpusat di Workshop Memey Marine, Tambaklorok, Tanjung Mas, Semarang Utara. Untuk armada di dermaga lain atau luar kota, tim <em>Mobile Service Siaga 24 Jam</em> kami siap diberangkatkan langsung dengan peralatan lengkap.</p>
           </div>
         </div>
 
