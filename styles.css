@@ -107,8 +107,11 @@ ul {
   list-style: none;
 }
 
-img {
+img, video, iframe, svg, canvas {
   max-width: 100%;
+}
+
+img {
   height: auto;
   display: block;
 }
@@ -3439,6 +3442,11 @@ img {
   gap: 1.5rem;
 }
 
+.cta-banner-content {
+  flex: 1;
+  min-width: 280px;
+}
+
 .cta-banner-content h4 {
   color: #FFFFFF;
   font-size: 1.35rem;
@@ -3449,6 +3457,10 @@ img {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.92rem;
   margin: 0;
+}
+
+.cta-banner-action {
+  flex-shrink: 0;
 }
 
 /* Mobile drawer accordion / sub-links */
@@ -5019,17 +5031,428 @@ input:focus, textarea:focus, select:focus {
     padding-left: 4px;
   }
 
-  /* Hero Section Mobile */
-  .hero-section { min-height: 80vh; padding: 4.5rem 0 3.5rem 0; }
-  .hero-title { font-size: 2.15rem; }
-  .hero-description { font-size: 1rem; }
-  .hero-stats { grid-template-columns: 1fr; }
+  /* Global Container & Heading Mobile Adjustments */
+  .section { padding: 3.25rem 0; }
+  .section-title { font-size: clamp(1.65rem, 5.5vw, 1.95rem); line-height: 1.28; overflow-wrap: break-word; }
+  .section-subtitle { font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem; overflow-wrap: break-word; }
+  .section-title-sm { font-size: 1.25rem; }
 
-  .section { padding: 3.75rem 0; }
-  .section-title { font-size: 1.85rem; }
+  /* 1. Hero Section Mobile */
+  .hero-section { min-height: auto; padding: 3.75rem 0 3rem 0; }
+  .hero-content { width: 100%; max-width: 100%; }
+  .hero-badge {
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    font-size: 0.78rem;
+    padding: 0.45rem 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .hero-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.35rem);
+    line-height: 1.22;
+    margin-bottom: 1.15rem;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.85rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 2.25rem;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: 100%;
+    padding-top: 1.5rem;
+  }
+  .hero-stats .stat-card {
+    width: 100%;
+    min-width: 0;
+    padding: 0.85rem 1rem;
+    box-sizing: border-box;
+  }
+  .stat-info {
+    min-width: 0;
+    flex: 1;
+  }
+  .stat-info h4 {
+    font-size: 0.92rem;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+  .stat-info p {
+    font-size: 0.78rem;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .partner-logos-grid { grid-template-columns: 1fr 1fr; }
+  /* 2. About Us Section Mobile */
+  .about-section {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .about-story, .about-team-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .story-card {
+    padding: 1.45rem 1.15rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .story-card h3 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+    overflow-wrap: break-word;
+  }
+  .story-card p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+  .vm-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 1.35rem;
+    width: 100%;
+  }
+  .vm-card {
+    padding: 1rem 0.9rem;
+    gap: 0.75rem;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .vm-body {
+    min-width: 0;
+    flex: 1;
+  }
+  .vm-body h4 {
+    font-size: 0.92rem;
+    margin-bottom: 0.2rem;
+  }
+  .vm-body p {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+  }
+  .legal-badge-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.45rem 1.15rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .legal-icon {
+    font-size: 1.85rem;
+  }
+  .legal-text {
+    width: 100%;
+    min-width: 0;
+  }
+  .legal-text h4 {
+    font-size: 1rem;
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+  .legal-text p {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+  .legal-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 100%;
+    margin-top: 0.85rem;
+  }
+  .legal-action-buttons .btn {
+    width: 100% !important;
+    justify-content: center;
+    white-space: normal !important;
+    text-align: center;
+    font-size: 0.82rem;
+    padding: 0.65rem 0.85rem;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  .team-overview-card {
+    padding: 1.45rem 1.15rem;
+    border-radius: var(--radius-md);
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.25rem;
+  }
+  .card-header-styled {
+    gap: 0.75rem;
+  }
+  .card-header-styled > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .card-header-styled h3 {
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+  }
+  .leadership-block {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+  .leader-item {
+    padding: 0.75rem;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .leader-item > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .cert-block {
+    padding: 1rem 0.85rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cert-item {
+    gap: 0.65rem;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .cert-item > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .cert-item strong {
+    font-size: 0.86rem;
+    overflow-wrap: break-word;
+  }
+  .cert-item p {
+    font-size: 0.76rem;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+  }
+  .division-tags {
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .tag-pill {
+    font-size: 0.76rem;
+    padding: 0.45rem 0.65rem;
+    line-height: 1.4;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .tag-pill i {
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+  .tag-text {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.45;
+  }
+  .workshop-card {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--radius-md);
+  }
+  .workshop-thumb {
+    height: 190px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .workshop-overlay {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  .workshop-overlay h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+  .workshop-overlay p {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  /* About Subpage CTA Banner Mobile */
+  .about-subpage-cta-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+    gap: 1.25rem !important;
+    padding: 1.5rem 1.15rem !important;
+    margin-top: 2rem !important;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .about-subpage-cta-banner .cta-banner-content {
+    width: 100% !important;
+  }
+  .about-subpage-cta-banner .cta-banner-content h4 {
+    font-size: 1.05rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.5rem !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+  }
+  .about-subpage-cta-banner .cta-banner-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.55 !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+  }
+  .about-subpage-cta-banner .cta-banner-action {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .about-subpage-cta-banner .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  /* 3. Services Section Mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .service-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-width: 0;
+    width: 100%;
+  }
+  .service-card .service-content {
+    padding: 1.4rem 1.25rem;
+  }
+  .service-title {
+    font-size: 1.3rem;
+  }
+  .service-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    overflow-wrap: break-word;
+  }
+  .service-points li {
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  .service-points li > div {
+    min-width: 0;
+    flex: 1;
+  }
+  .service-points strong {
+    font-size: 0.88rem;
+  }
+  .service-points .sub-detail {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+  }
+
+  /* 4. Workflow Section Mobile */
+  .workflow-steps {
+    flex-direction: column;
+    gap: 0.65rem;
+    align-items: stretch;
+  }
+  .step-card {
+    width: 100%;
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+  .step-arrow {
+    transform: rotate(90deg);
+    margin: 0.35rem 0;
+    animation: arrowPulseVertical 2.4s ease-in-out infinite;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 5. Clients & Partners Section Mobile */
+  .partner-logos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2.75rem;
+  }
+  .partner-card {
+    min-height: 95px;
+    padding: 1rem 0.5rem;
+    border-radius: var(--radius-md);
+  }
+  .partner-logo-img {
+    max-height: 34px;
+    max-width: 140px;
+  }
+  .brand-caption {
+    font-size: 0.68rem;
+  }
+  .clients-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .client-badge-item {
+    width: 100%;
+    padding: 1.35rem 1rem;
+    border-radius: var(--radius-md);
+    min-width: 0;
+  }
+  .client-name {
+    font-size: 0.95rem;
+    overflow-wrap: break-word;
+  }
+  .client-detail {
+    font-size: 0.78rem;
+    overflow-wrap: break-word;
+  }
+  .client-scope {
+    font-size: 0.72rem;
+    overflow-wrap: break-word;
+    text-align: center;
+    line-height: 1.35;
+    flex-wrap: wrap;
+  }
 
   /* Contact Section Mobile Optimization */
   .contact-section {
@@ -5262,7 +5685,6 @@ input:focus, textarea:focus, select:focus {
   .lkpp-perks { grid-template-columns: 1fr; }
   .protocol-steps-grid { grid-template-columns: 1fr; }
   .facilities-spotlight-grid { grid-template-columns: 1fr; }
-  .about-subpage-cta-banner { padding: 1.75rem 1.25rem; text-align: center; justify-content: center; }
 
   /* Services Detail Mobile Adjustments */
   .service-detail-block { padding: 2rem 1.25rem; }
@@ -5284,6 +5706,66 @@ input:focus, textarea:focus, select:focus {
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-modal { padding: 1rem; }
   .gallery-modal-info { padding: 1.25rem; }
+
+  /* Footer Mobile (<= 768px) */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 3rem 1.25rem 2rem 1.25rem;
+  }
+  .footer-col {
+    width: 100%;
+  }
+  .footer-about {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+  }
+  .footer-legal-tag {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: normal;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    overflow-wrap: break-word;
+  }
+  .footer-links li a {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+  .footer-contact-item {
+    font-size: 0.84rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  /* Floating Buttons Mobile (<= 768px) */
+  .floating-wa {
+    bottom: 20px;
+    right: 18px;
+    padding: 0.65rem 1rem;
+    font-size: 0.82rem;
+    gap: 0.45rem;
+  }
+  .floating-wa i {
+    font-size: 1.2rem;
+  }
+  .back-to-top {
+    bottom: 20px;
+    left: 18px;
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -5366,12 +5848,38 @@ input:focus, textarea:focus, select:focus {
   }
 
   .about-subpage-cta-banner {
-    padding: 1.35rem 1rem;
+    padding: 1.35rem 1rem !important;
+    gap: 1rem !important;
+  }
+
+  .about-subpage-cta-banner .cta-banner-content h4 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .about-subpage-cta-banner .cta-banner-content p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
   }
 
   .about-subpage-cta-banner .btn {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.88rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .story-card, .team-overview-card, .legal-badge-card {
+    padding: 1.25rem 0.95rem;
+  }
+
+  .legal-action-buttons .btn {
+    font-size: 0.78rem !important;
+    padding: 0.6rem 0.75rem !important;
+  }
+
+  .workshop-thumb {
+    height: 175px;
   }
 
   .partner-logos-grid {
@@ -5455,6 +5963,28 @@ input:focus, textarea:focus, select:focus {
   .map-card-header .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Extra Compact Footer & Floating Buttons (<= 480px) */
+  .footer-container {
+    padding: 2.5rem 1rem 1.75rem 1rem;
+    gap: 1.75rem;
+  }
+  .floating-wa {
+    bottom: 16px;
+    right: 14px;
+    padding: 0.55rem 0.85rem;
+    font-size: 0.78rem;
+  }
+  .floating-wa i {
+    font-size: 1.1rem;
+  }
+  .back-to-top {
+    bottom: 16px;
+    left: 14px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.8rem;
   }
 }
 
